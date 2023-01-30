@@ -1,0 +1,19 @@
+type Drone @model {
+  id: ID! @unique
+  name: String!
+  lat: String
+  long: String
+  landHealth: String
+  cropsSprayed: [Sprayed]
+  createAt: DateTime
+  updatedAt: DateTime!
+}
+
+type Sprayed @model {
+  id: ID! @unique
+  cropsType: String
+  sprayedDate: Timestamp
+  sprayType: String
+  drone: Drone
+  createAt: DateTime
+}
